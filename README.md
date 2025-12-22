@@ -1,4 +1,4 @@
-df configurations
+df-zeko configurations
 
 notable packages:
 bash-autocomplete
