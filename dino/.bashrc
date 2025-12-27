@@ -120,3 +120,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 export QT_QPA_PLATFORMTHEME=qt5ct
+export XDG_CONFIG_HOME="$HOME/.config"
+
