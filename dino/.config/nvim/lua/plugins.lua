@@ -96,3 +96,20 @@ require("lazy").setup({
     },        
     { "mason-org/mason.nvim", opts = {} },
 })
+
+return {
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "rcarriga/nvim-dap-ui",       -- optional UI
+      "theHamsta/nvim-dap-virtual-text", -- inline variable text
+    },
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim", -- optional installer integration
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+  },
+}
+

@@ -23,4 +23,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 })
 
-vim.lsp.enable({ "ty" })
+vim.lsp.config.clangd = {
+  cmd = { 'clangd', '--background-index', '--clang-tidy' },
+  filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+  root_markers = { 'compile_commands.json', '.git' },
+}
+
+vim.lsp.enable({ "ty", "clangd"})
