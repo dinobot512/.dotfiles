@@ -25,3 +25,9 @@ vim.opt.smartcase = true            -- but make it case sensitive if an uppercas
 
 -- Leader Key
 vim.g.mapleader = ' '
+
+-- moving status bar to top of windows
+vim.o.laststatus = 3
+-- vim.o.winbar = '%<%f %h%w%m%r%=%-14.(%l,%c%V%) %P'
+vim.api.nvim_set_hl(0, 'WinBar', { link = 'StatusLine' })
+vim.api.nvim_set_hl(0, 'WinBarNC', { link = 'StatusLineNC' })

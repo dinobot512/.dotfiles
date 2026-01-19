@@ -1,10 +1,10 @@
 /*Colorschemes, there are Gruvbox, Tokyo Night, and Everforest by default. The way it works is whichever colorscheme section is defined last will be used. Here everforest is last, but put any one you want to use as the last one.*/
 
 /* Custom Colors */
-@define-color background rgba(14, 14, 14, 0.6);
+@define-color background rgba(14, 14, 14, 0);
 @define-color background-light #3c3836;
 @define-color foreground #ebdbb2;
-@define-color black #32302f;
+@define-color black #62605f;
 @define-color red #ec241d;
 @define-color green #40ff40;
 @define-color yellow #f7f921;
@@ -15,9 +15,9 @@
 @define-color orange #d65d0e;
 
 /* Module-specific colors */
-@define-color workspaces-color @white;
+@define-color workspaces-color @black;
 @define-color workspaces-focused-bg @green;
-@define-color workspaces-focused-fg @cyan;
+@define-color workspaces-focused-fg @white;
 @define-color workspaces-urgent-bg @red;
 @define-color workspaces-urgent-fg @black;
 
@@ -86,7 +86,7 @@ window#waybar {
     background: @background-light;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     color: @workspaces-focused-fg;
 }
 
@@ -218,7 +218,7 @@ window#waybar {
 }
 
 #custom-quote {
-    color: @quote-color;
+    color: @black;
     border-bottom-color: @quote-color;
 }
 
