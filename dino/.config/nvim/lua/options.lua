@@ -23,11 +23,24 @@ vim.opt.hlsearch = false            -- do not highlight matches
 vim.opt.ignorecase = true           -- ignore case in searches by default
 vim.opt.smartcase = true            -- but make it case sensitive if an uppercase is entered
 
--- Leader Key
-vim.g.mapleader = ' '
-
 -- moving status bar to top of windows
 vim.o.laststatus = 3
 -- vim.o.winbar = '%<%f %h%w%m%r%=%-14.(%l,%c%V%) %P'
 vim.api.nvim_set_hl(0, 'WinBar', { link = 'StatusLine' })
 vim.api.nvim_set_hl(0, 'WinBarNC', { link = 'StatusLineNC' })
+
+-- Keybinds
+vim.g.mapleader = ' '               -- leader key
+
+-- Window navigation without prefix (Alt key)
+vim.keymap.set('n', '<M-h>', '<C-w>h', { desc = 'Move to left window' })
+vim.keymap.set('n', '<M-j>', '<C-w>j', { desc = 'Move to window below' })
+vim.keymap.set('n', '<M-k>', '<C-w>k', { desc = 'Move to window above' })
+vim.keymap.set('n', '<M-l>', '<C-w>l', { desc = 'Move to right window' })
+vim.keymap.set('n', '<M-s>', '<C-w>s', { desc = 'Split window horizontally' })
+vim.keymap.set('n', '<M-v>', '<C-w>v', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<M-q>', '<C-w>q', { desc = 'Quit window' })
+
+-- File explorer
+vim.keymap.set('n', '<Leader>e', vim.cmd.Ex, { desc = 'Open file explorer' })
+-- vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })
