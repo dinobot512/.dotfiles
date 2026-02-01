@@ -1,7 +1,7 @@
 -- lsp.lua
 return {
     {
-        "williambowman/mason.nvim",
+        "mason-org/mason.nvim",
         opts = {},
     },
 }

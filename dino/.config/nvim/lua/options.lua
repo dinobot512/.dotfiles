@@ -40,7 +40,13 @@ vim.keymap.set('n', '<M-l>', '<C-w>l', { desc = 'Move to right window' })
 vim.keymap.set('n', '<M-s>', '<C-w>s', { desc = 'Split window horizontally' })
 vim.keymap.set('n', '<M-v>', '<C-w>v', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<M-q>', '<C-w>q', { desc = 'Quit window' })
+vim.keymap.set('n', '<M-w>', vim.cmd.sav, { desc = 'Save window' })
+vim.keymap.set('n', '<M-x>', vim.cmd.x, { desc = 'Save and quit window' })
 
 -- File explorer
 vim.keymap.set('n', '<M-e>', vim.cmd.Ex, { desc = 'Open file explorer' })
 -- vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })
+
+-- Quick terminal window
+vim.keymap.set('n', '<M-t>', vim.cmd.ter, { desc = 'Open terminal'})
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
