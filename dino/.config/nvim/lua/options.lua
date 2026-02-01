@@ -42,5 +42,5 @@ vim.keymap.set('n', '<M-v>', '<C-w>v', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<M-q>', '<C-w>q', { desc = 'Quit window' })
 
 -- File explorer
-vim.keymap.set('n', '<Leader>e', vim.cmd.Ex, { desc = 'Open file explorer' })
+vim.keymap.set('n', '<M-e>', vim.cmd.Ex, { desc = 'Open file explorer' })
 -- vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })
