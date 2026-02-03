@@ -40,8 +40,8 @@ vim.keymap.set('n', '<M-l>', '<C-w>l', { desc = 'Move to right window' })
 vim.keymap.set('n', '<M-s>', '<C-w>s', { desc = 'Split window horizontally' })
 vim.keymap.set('n', '<M-v>', '<C-w>v', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<M-q>', '<C-w>q', { desc = 'Quit window' })
-vim.keymap.set('n', '<M-w>', vim.cmd.sav, { desc = 'Save window' })
-vim.keymap.set('n', '<M-x>', vim.cmd.x, { desc = 'Save and quit window' })
+--vim.keymap.set('n', '<M-w>', '<cmd>write<cr>', { desc = 'Write buffer' })
+--vim.keymap.set('n', '<M-x>', '<cmd>x<cr>', { desc = 'Write buffer and quit window' })
 
 -- File explorer
 vim.keymap.set('n', '<M-e>', vim.cmd.Ex, { desc = 'Open file explorer' })
