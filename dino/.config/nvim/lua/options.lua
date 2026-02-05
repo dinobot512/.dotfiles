@@ -2,6 +2,9 @@
 vim.opt.clipboard = 'unnamedplus'   -- use system clipboard 
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
+-- Mouse Settings
+vim.opt.mouse = ""                  -- unset mouse
+
 -- Tab
 vim.opt.tabstop = 4                 -- number of visual spaces per TAB
 vim.opt.softtabstop = 4             -- number of spaces in tab when editing
@@ -39,6 +42,9 @@ vim.keymap.set('n', '<M-k>', '<C-w>k', { desc = 'Move to window above' })
 vim.keymap.set('n', '<M-l>', '<C-w>l', { desc = 'Move to right window' })
 vim.keymap.set('n', '<M-s>', '<C-w>s', { desc = 'Split window horizontally' })
 vim.keymap.set('n', '<M-v>', '<C-w>v', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<M-t>', '<C-w>T', { desc = 'Move the current split window into its own tab' })
+vim.keymap.set('n', '<tab>', 'gt', { desc = 'Move to next tab' })
+vim.keymap.set('n', '<S-tab>', 'gT', { desc = 'Move to previous tab' })
 vim.keymap.set('n', '<M-q>', '<C-w>q', { desc = 'Quit window' })
 --vim.keymap.set('n', '<M-w>', '<cmd>write<cr>', { desc = 'Write buffer' })
 --vim.keymap.set('n', '<M-x>', '<cmd>x<cr>', { desc = 'Write buffer and quit window' })
@@ -48,5 +54,5 @@ vim.keymap.set('n', '<M-e>', vim.cmd.Ex, { desc = 'Open file explorer' })
 -- vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })
 
 -- Quick terminal window
-vim.keymap.set('n', '<M-t>', vim.cmd.ter, { desc = 'Open terminal'})
+vim.keymap.set('n', '<M-enter>', vim.cmd.ter, { desc = 'Open terminal'})
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
