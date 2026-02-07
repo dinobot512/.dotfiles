@@ -35,3 +35,7 @@ vim.o.laststatus = 3
 -- vim.o.winbar = '%<%f %h%w%m%r%=%-14.(%l,%c%V%) %P'
 vim.api.nvim_set_hl(0, 'WinBar', { link = 'StatusLine' })
 vim.api.nvim_set_hl(0, 'WinBarNC', { link = 'StatusLineNC' })
+
+-- spell check
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
