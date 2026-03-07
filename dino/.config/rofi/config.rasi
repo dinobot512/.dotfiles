@@ -1,6 +1,7 @@
 configuration {
     modi:   "drun,recursivebrowser,filebrowser";
     font:   "Terminess Nerd Font Mono 12";
+    //kb-delete-entry:    "Control+h";
 
     timeout {
         action: "kb-cancel";
@@ -8,9 +9,6 @@ configuration {
     }
     recursivebrowser {
         directory: "/home/dino";
-        sorting-method:    "mtime";
-        directories-first: true;
-        show-hidden: false;
         cancel-returns-1: true;
         command: "xdg-open";
         display-name: "🔍";
@@ -19,7 +17,8 @@ configuration {
         directory: "/home/dino/Documents/";
         sorting-method:    "mtime";
         directories-first: true;
-        show-hidden: false;
+        show-hidden: false; 
+        // triggered by kb-delete-entry
         cancel-returns-1: true;
         command: "xdg-open";
         display-name: "🗀";

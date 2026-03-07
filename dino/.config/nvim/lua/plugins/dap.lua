@@ -2,6 +2,7 @@
 return {
   {
     "mfussenegger/nvim-dap",
+    enabled = true,
     dependencies = {
       "rcarriga/nvim-dap-ui",
       "nvim-neotest/nvim-nio",  -- required by dap-ui

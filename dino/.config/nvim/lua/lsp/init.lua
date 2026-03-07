@@ -1,3 +1,5 @@
+-- lua/lsp/init.lua
+
 -- Remove Global Default Key mapping
 vim.keymap.del("n", "grn")
 vim.keymap.del("n", "gra")
@@ -11,7 +13,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     callback = function (args)
         local keymap = vim.keymap
         local lsp = vim.lsp
-	    local bufopts = { noremap = true, silent = true }
+	    local bufopts = { noremap = true, silent = true, buffer = args.buf }
 
         keymap.set("n", "gr", lsp.buf.references, bufopts)
         keymap.set("n", "gd", lsp.buf.definition, bufopts)
@@ -28,5 +30,15 @@ vim.lsp.config.clangd = {
   filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
   root_markers = { 'compile_commands.json', '.git' },
 }
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = { "en_us" }
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+})
 
 vim.lsp.enable({ "ty", "clangd"})

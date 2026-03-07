@@ -13,6 +13,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require("options")
 require("keybinds")
-require("lsp")
 require("lazy").setup("plugins")  -- Loads all files in lua/plugins/
---require("nvim-tree").setup()
+require("lsp")

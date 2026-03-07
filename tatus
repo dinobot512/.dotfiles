@@ -1,0 +1,218 @@
+[1mdiff --git a/dino/.config/hypr/hyprland.conf b/dino/.config/hypr/hyprland.conf[m
+[1mindex 0bf6ac5..69b0eeb 100644[m
+[1m--- a/dino/.config/hypr/hyprland.conf[m
+[1m+++ b/dino/.config/hypr/hyprland.conf[m
+[36m@@ -12,7 +12,7 @@[m [m$fileManager = dolphin[m
+ $menu = rofi[m
+ $drunArgs = -show drun -replace -i[m
+ $runArgs = -show combi -modes combi -combi-modes "drun,run" -replace -i[m
+[31m-$filebrowserArgs = -show combi -modes combi -combi-modes "filebrowser,recursivebrowser" -replace -i[m
+[32m+[m[32m$filebrowserArgs = -show combi -modes combi -combi-modes "filebrowser,recursivebrowser" -replace -i -matching regex[m
+ $networkUI = kitty -e nmtui[m
+ $audioUI = kitty -e marstui-audio[m
+ [m
+[1mdiff --git a/dino/.config/hypr/rules.conf b/dino/.config/hypr/rules.conf[m
+[1mindex 032c05c..b97ba76 100644[m
+[1m--- a/dino/.config/hypr/rules.conf[m
+[1m+++ b/dino/.config/hypr/rules.conf[m
+[36m@@ -5,9 +5,11 @@[m
+ # https://wiki.hypr.land/Configuring/Window-Rules/[m
+ ## all[m
+ windowrule = match:class .*, suppress_event maximize[m
+[31m-windowrule = match:class .*, tile on[m
+[32m+[m[32m#windowrule = match:class .*, tile on[m
+[32m+[m
+ # wayland dragging issues (from default config)[m
+ #windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0[m
+[32m+[m
+ windowrule = match:initial_class org.mozilla.Thunderbird, match:initial_title ^(Write.*)$, float on[m
+ windowrule = match:initial_class org.mozilla.Thunderbird, match:initial_title Edit Item, float on[m
+ # smart gaps[m
+[1mdiff --git a/dino/.config/nvim/init.lua b/dino/.config/nvim/init.lua[m
+[1mindex f3039fd..2b621d1 100644[m
+[1m--- a/dino/.config/nvim/init.lua[m
+[1m+++ b/dino/.config/nvim/init.lua[m
+[36m@@ -13,6 +13,5 @@[m [mvim.opt.rtp:prepend(lazypath)[m
+ [m
+ require("options")[m
+ require("keybinds")[m
+[31m-require("lsp")[m
+ require("lazy").setup("plugins")  -- Loads all files in lua/plugins/[m
+[31m---require("nvim-tree").setup()[m
+[32m+[m[32mrequire("lsp")[m
+[1mdiff --git a/dino/.config/nvim/lazy-lock.json b/dino/.config/nvim/lazy-lock.json[m
+[1mindex 1779345..a13cb32 100644[m
+[1m--- a/dino/.config/nvim/lazy-lock.json[m
+[1m+++ b/dino/.config/nvim/lazy-lock.json[m
+[36m@@ -1,13 +1,18 @@[m
+ {[m
+[31m-  "blink.cmp": { "branch": "main", "commit": "b19413d214068f316c78978b08264ed1c41830ec" },[m
+[31m-  "cmake-tools.nvim": { "branch": "master", "commit": "16dfb08bb2d6bf25a6c9b4c1c22feef4a835ba3c" },[m
+[32m+[m[32m  "blink.cmp": { "branch": "main", "commit": "4b18c32adef2898f95cdef6192cbd5796c1a332d" },[m
+[32m+[m[32m  "cmake-tools.nvim": { "branch": "master", "commit": "75a3589cf5ff19ede2a0c0f34da5c37554a44221" },[m
+   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },[m
+   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },[m
+[32m+[m[32m  "live-server.nvim": { "branch": "main", "commit": "d6a253569ebb813c622f56971f55f56d044f6ab5" },[m
+[32m+[m[32m  "markdown-preview.nvim": { "branch": "main", "commit": "a3ad2b3883a273890eb8901563f4cc6a0becf58b" },[m
+   "mason-nvim-dap.nvim": { "branch": "main", "commit": "9a10e096703966335bd5c46c8c875d5b0690dade" },[m
+   "mason.nvim": { "branch": "main", "commit": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65" },[m
+   "nvim-dap": { "branch": "master", "commit": "e47878dcf1ccc30136b30d19ab19fe76946d61cd" },[m
+   "nvim-dap-ui": { "branch": "master", "commit": "cf91d5e2d07c72903d052f5207511bf7ecdb7122" },[m
+   "nvim-dap-virtual-text": { "branch": "master", "commit": "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6" },[m
+   "nvim-nio": { "branch": "master", "commit": "21f5324bfac14e22ba26553caf69ec76ae8a7662" },[m
+[31m-  "plenary.nvim": { "branch": "master", "commit": "b9fd5226c2f76c951fc8ed5923d85e4de065e509" }[m
+[32m+[m[32m  "peek.nvim": { "branch": "master", "commit": "5820d937d5414baea5f586dc2a3d912a74636e5b" },[m
+[32m+[m[32m  "plenary.nvim": { "branch": "master", "commit": "b9fd5226c2f76c951fc8ed5923d85e4de065e509" },[m
+[32m+[m[32m  "render-markdown.nvim": { "branch": "main", "commit": "48b4175dbca8439d30c1f52231cbe5a712c8f9d9" },[m
+[32m+[m[32m  "vim-vinegar": { "branch": "master", "commit": "bb1bcddf43cfebe05eb565a84ab069b357d0b3d6" }[m
+ }[m
+[1mdiff --git a/dino/.config/nvim/lsp/clangd.lua b/dino/.config/nvim/lsp/clangd.lua[m
+[1mdeleted file mode 100644[m
+[1mindex 6e82eb0..0000000[m
+[1m--- a/dino/.config/nvim/lsp/clangd.lua[m
+[1m+++ /dev/null[m
+[36m@@ -1,6 +0,0 @@[m
+[31m----@type vim.lsp.Config[m
+[31m-return {[m
+[31m-  cmd = { 'clangd', '--background-index', '--clang-tidy' },[m
+[31m-  filetypes = { 'c', 'cpp', 'objc', 'objcpp' },[m
+[31m-  root_markers = { 'compile_commands.json', '.git' },[m
+[31m-}[m
+[1mdiff --git a/dino/.config/nvim/lsp/ty.lua b/dino/.config/nvim/lsp/ty.lua[m
+[1mdeleted file mode 100644[m
+[1mindex cd770a3..0000000[m
+[1m--- a/dino/.config/nvim/lsp/ty.lua[m
+[1m+++ /dev/null[m
+[36m@@ -1,7 +0,0 @@[m
+[31m--- src: https://github.com/neovim/nvim-lspconfig/blob/master/lsp/ty.lua[m
+[31m----@type vim.lsp.Config[m
+[31m-return {[m
+[31m-  cmd = { 'ty', 'server' },[m
+[31m-  filetypes = { 'python' },[m
+[31m-  root_markers = { 'ty.toml', 'pyproject.toml', '.git' },[m
+[31m-}[m
+[1mdiff --git a/dino/.config/nvim/lua/keybinds.lua b/dino/.config/nvim/lua/keybinds.lua[m
+[1mindex 8bf3f76..d04b17c 100644[m
+[1m--- a/dino/.config/nvim/lua/keybinds.lua[m
+[1m+++ b/dino/.config/nvim/lua/keybinds.lua[m
+[36m@@ -22,9 +22,15 @@[m [mvim.keymap.set('n', '<Leader>bn', '<cmd>bn<cr>', { desc = 'Go to next buffer'})[m
+ vim.keymap.set('n', '<Leader>bp', '<cmd>bp<cr>', { desc = 'Go to previous buffer'})[m
+ [m
+ -- File explorer[m
+[31m-vim.keymap.set('n', '<M-e>', vim.cmd.Ex, { desc = 'Open file explorer' })[m
+[31m--- vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })[m
+[32m+[m[32m--vim.keymap.set('n', '<M-e>', vim.cmd.Ex, { desc = 'Open file explorer' })[m
+[32m+[m[32m--vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })[m
+ [m
+ -- Quick terminal window[m
+ vim.keymap.set('n', '<M-enter>', vim.cmd.ter, { desc = 'Open terminal'})[m
+ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')[m
+[32m+[m
+[32m+[m[32m-- Markdown[m
+[32m+[m[32m--vim.keymap.set('n', '<Leader>mp', '<cmd>MarkdownPreview<cr>', { desc = 'Render .md as .pdf'})[m
+[32m+[m[32mvim.keymap.set('n', '<Leader>po', '<cmd>PeekOpen<cr>')[m
+[32m+[m[32mvim.keymap.set('n', '<Leader>pc', '<cmd>PeekClose<cr>')[m
+[32m+[m[32mvim.keymap.set('n', '<Leader>sp', '<cmd>set spell!<cr>', { desc = 'Toggle spellcheck'})[m
+[1mdiff --git a/dino/.config/nvim/lua/lsp.lua b/dino/.config/nvim/lua/lsp.lua[m
+[1mdeleted file mode 100644[m
+[1mindex ad6725f..0000000[m
+[1m--- a/dino/.config/nvim/lua/lsp.lua[m
+[1m+++ /dev/null[m
+[36m@@ -1,32 +0,0 @@[m
+[31m--- Remove Global Default Key mapping[m
+[31m-vim.keymap.del("n", "grn")[m
+[31m-vim.keymap.del("n", "gra")[m
+[31m-vim.keymap.del("n", "grr")[m
+[31m-vim.keymap.del("n", "gri")[m
+[31m-vim.keymap.del("n", "gO")[m
+[31m-[m
+[31m--- Create keymapping[m
+[31m--- LspAttach: After an LSP Client performs "initialize" and attaches to a buffer.[m
+[31m-vim.api.nvim_create_autocmd("LspAttach", {[m
+[31m-    callback = function (args)[m
+[31m-        local keymap = vim.keymap[m
+[31m-        local lsp = vim.lsp[m
+[31m-	    local bufopts = { noremap = true, silent = true }[m
+[31m-[m
+[31m-        keymap.set("n", "gr", lsp.buf.references, bufopts)[m
+[31m-        keymap.set("n", "gd", lsp.buf.definition, bufopts)[m
+[31m-        keymap.set("n", "<space>rn", lsp.buf.rename, bufopts)[m
+[31m-        keymap.set("n", "K", lsp.buf.hover, bufopts)[m
+[31m-        keymap.set("n", "<space>f", function()[m
+[31m-            vim.lsp.buf.format({ async = true })[m
+[31m-        end, bufopts)[m
+[31m-    end[m
+[31m-})[m
+[31m-[m
+[31m-vim.lsp.config.clangd = {[m
+[31m-  cmd = { 'clangd', '--background-index', '--clang-tidy' },[m
+[31m-  filetypes = { 'c', 'cpp', 'objc', 'objcpp' },[m
+[31m-  root_markers = { 'compile_commands.json', '.git' },[m
+[31m-}[m
+[31m-[m
+[31m-vim.lsp.enable({ "ty", "clangd"})[m
+[1mdiff --git a/dino/.config/nvim/lua/options.lua b/dino/.config/nvim/lua/options.lua[m
+[1mindex 467e658..b79fcf7 100644[m
+[1m--- a/dino/.config/nvim/lua/options.lua[m
+[1m+++ b/dino/.config/nvim/lua/options.lua[m
+[36m@@ -30,11 +30,12 @@[m [mvim.opt.hlsearch = false            -- do not highlight matches[m
+ vim.opt.ignorecase = true           -- ignore case in searches by default[m
+ vim.opt.smartcase = true            -- but make it case sensitive if an uppercase is entered[m
+ [m
+[31m--- moving status bar to top of windows[m
+[32m+[m[32m-- One status bar in split windows[m
+ vim.o.laststatus = 3[m
+[31m--- vim.o.winbar = '%<%f %h%w%m%r%=%-14.(%l,%c%V%) %P'[m
+[31m-vim.api.nvim_set_hl(0, 'WinBar', { link = 'StatusLine' })[m
+[31m-vim.api.nvim_set_hl(0, 'WinBarNC', { link = 'StatusLineNC' })[m
+[32m+[m[32m-- moving status bar to top of windows[m
+[32m+[m[32m--vim.o.winbar = '%<%f %h%w%m%r%=%-14.(%l,%c%V%) %P'[m
+[32m+[m[32m--vim.api.nvim_set_hl(0, 'WinBar', { link = 'StatusLine' })[m
+[32m+[m[32m--vim.api.nvim_set_hl(0, 'WinBarNC', { link = 'StatusLineNC' })[m
+ [m
+ -- spell check[m
+ vim.opt.spell = true[m
+[1mdiff --git a/dino/.config/nvim/lua/plugins/vinegar.lua b/dino/.config/nvim/lua/plugins/vinegar.lua[m
+[1mindex 0c01d00..3ad6e75 100644[m
+[1m--- a/dino/.config/nvim/lua/plugins/vinegar.lua[m
+[1m+++ b/dino/.config/nvim/lua/plugins/vinegar.lua[m
+[36m@@ -1,6 +1,2 @@[m
+ -- vinegar.lua[m
+[31m-return {[m
+[31m-    {[m
+[31m-        "tpope/vim-vinegar",[m
+[31m-    },[m
+[31m-}[m
+[32m+[m[32mreturn { "tpope/vim-vinegar" }[m
+[1mdiff --git a/dino/.config/rofi/config.rasi b/dino/.config/rofi/config.rasi[m
+[1mindex 97578c6..5bb7ed7 100644[m
+[1m--- a/dino/.config/rofi/config.rasi[m
+[1m+++ b/dino/.config/rofi/config.rasi[m
+[36m@@ -1,6 +1,7 @@[m
+ configuration {[m
+     modi:   "drun,recursivebrowser,filebrowser";[m
+     font:   "Terminess Nerd Font Mono 12";[m
+[32m+[m[32m    //kb-delete-entry:    "Control+h";[m
+ [m
+     timeout {[m
+         action: "kb-cancel";[m
+[36m@@ -8,9 +9,6 @@[m [mconfiguration {[m
+     }[m
+     recursivebrowser {[m
+         directory: "/home/dino";[m
+[31m-        sorting-method:    "mtime";[m
+[31m-        directories-first: true;[m
+[31m-        show-hidden: false;[m
+         cancel-returns-1: true;[m
+         command: "xdg-open";[m
+         display-name: "🔍";[m
+[36m@@ -19,7 +17,8 @@[m [mconfiguration {[m
+         directory: "/home/dino/Documents/";[m
+         sorting-method:    "mtime";[m
+         directories-first: true;[m
+[31m-        show-hidden: false;[m
+[32m+[m[32m        show-hidden: false;[m[41m [m
+[32m+[m[32m        // triggered by kb-delete-entry[m
+         cancel-returns-1: true;[m
+         command: "xdg-open";[m
+         display-name: "🗀";[m

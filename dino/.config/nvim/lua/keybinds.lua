@@ -22,9 +22,17 @@ vim.keymap.set('n', '<Leader>bn', '<cmd>bn<cr>', { desc = 'Go to next buffer'})
 vim.keymap.set('n', '<Leader>bp', '<cmd>bp<cr>', { desc = 'Go to previous buffer'})
 
 -- File explorer
-vim.keymap.set('n', '<M-e>', vim.cmd.Ex, { desc = 'Open file explorer' })
--- vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })
+--vim.keymap.set('n', '<M-e>', vim.cmd.Ex, { desc = 'Open file explorer' })
+--vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })
 
 -- Quick terminal window
 vim.keymap.set('n', '<M-enter>', vim.cmd.ter, { desc = 'Open terminal'})
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+
+-- Markdown
+--vim.keymap.set('n', '<Leader>mp', '<cmd>MarkdownPreview<cr>', { desc = 'Render .md as .pdf'})
+vim.keymap.set('n', '<Leader>po', '<cmd>PeekOpen<cr>')
+vim.keymap.set('n', '<Leader>pc', '<cmd>PeekClose<cr>')
+vim.keymap.set('n', '<Leader>sp', '<cmd>set spell!<cr>', { desc = 'Toggle spellcheck'})
+
+vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)

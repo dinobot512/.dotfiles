@@ -1,6 +1,2 @@
 -- vinegar.lua
-return {
-    {
-        "tpope/vim-vinegar",
-    },
-}
+return { "tpope/vim-vinegar" }
