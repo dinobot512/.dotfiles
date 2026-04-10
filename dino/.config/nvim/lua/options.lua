@@ -38,5 +38,11 @@ vim.o.laststatus = 3
 --vim.api.nvim_set_hl(0, 'WinBarNC', { link = 'StatusLineNC' })
 
 -- spell check
-vim.opt.spell = true
+vim.opt.spell = false;
 vim.opt.spelllang = "en_us"
+--[[vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown" },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})]]

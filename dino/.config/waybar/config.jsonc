@@ -12,6 +12,7 @@
 
     "hyprland/workspaces": {
         "sort-by-number": true, 
+        "show-special": true,
         "format": "{icon}",
         "on-click": "activate",
         "format-icons": {

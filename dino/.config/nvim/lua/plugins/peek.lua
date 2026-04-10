@@ -29,5 +29,7 @@ return {
         })
         vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
         vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+        vim.keymap.set('n', '<Leader>po', '<cmd>PeekOpen<cr>')
+        vim.keymap.set('n', '<Leader>pc', '<cmd>PeekClose<cr>')
     end,
 }

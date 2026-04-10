@@ -92,7 +92,12 @@ fi
 #alias la='ls -A'
 #alias l='ls -CF'
 alias vim='nvim'
-alias open='xdg-open'
+function open() {
+    for f in "$@";
+    do
+        xdg-open "$f" & disown;
+    done
+}
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
