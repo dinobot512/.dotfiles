@@ -125,6 +125,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-export QT_QPA_PLATFORMTHEME=qt5ct
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# added 2026-04-14, adds binaries installed by cargo to PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# added 2026-04-19, initializes zoxide, aliases to cd
+eval "$(zoxide init bash --cmd cd)"
+export PATH="$HOME/.local/bin:$PATH"

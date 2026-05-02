@@ -4,22 +4,22 @@
 vim.g.mapleader = ' '               -- leader key
 
 -- Window navigation without prefix (Alt key)
-vim.keymap.set('n', '<M-h>', '<C-w>h', { desc = 'Move to left window' })
-vim.keymap.set('n', '<M-j>', '<C-w>j', { desc = 'Move to window below' })
-vim.keymap.set('n', '<M-k>', '<C-w>k', { desc = 'Move to window above' })
-vim.keymap.set('n', '<M-l>', '<C-w>l', { desc = 'Move to right window' })
-vim.keymap.set('n', '<M-s>', '<C-w>s', { desc = 'Split window horizontally' })
-vim.keymap.set('n', '<M-v>', '<C-w>v', { desc = 'Split window vertically' })
-vim.keymap.set('n', '<M-w>', '<C-w>T', { desc = 'Move the current split window into its own tab' })
-vim.keymap.set('n', '<tab>', 'gt', { desc = 'Move to next tab' })
-vim.keymap.set('n', '<S-tab>', 'gT', { desc = 'Move to previous tab' })
-vim.keymap.set('n', '<M-q>', '<C-w>q', { desc = 'Quit window' })
---vim.keymap.set('n', '<M-w>', '<cmd>write<cr>', { desc = 'Write buffer' })
---vim.keymap.set('n', '<M-x>', '<cmd>x<cr>', { desc = 'Write buffer and quit window' })
-vim.keymap.set("n", "H", "^", { desc = 'Move to beginning of line' })
-vim.keymap.set("n", "L", "$", { desc = 'Move to end of line' })
-vim.keymap.set("n", "K", "<C-u>" ,{ desc = 'Move half page up' })
-vim.keymap.set("n", "J", "<C-d>" ,{ desc = 'Move half page down' })
+vim.keymap.set('n', '<M-h>', '<C-w>h',          { desc = 'Move to left window' })
+vim.keymap.set('n', '<M-j>', '<C-w>j',          { desc = 'Move to window below' })
+vim.keymap.set('n', '<M-k>', '<C-w>k',          { desc = 'Move to window above' })
+vim.keymap.set('n', '<M-l>', '<C-w>l',          { desc = 'Move to right window' })
+vim.keymap.set('n', '<M-s>', '<C-w>s',          { desc = 'Split window horizontally' })
+vim.keymap.set('n', '<M-v>', '<C-w>v',          { desc = 'Split window vertically' })
+vim.keymap.set('n', '<M-T>', '<C-w>T',          { desc = 'Move the current split window into its own tab' })
+--vim.keymap.set('n', '<tab>', 'gt',              { desc = 'Move to next tab' })
+--vim.keymap.set('n', '<S-tab>', 'gT',            { desc = 'Move to previous tab' })
+vim.keymap.set('n', '<M-q>', '<C-w>q',          { desc = 'Quit window' })
+vim.keymap.set('n', '<M-w>', '<cmd>write<cr>',  { desc = 'Write buffer' })
+vim.keymap.set('n', '<M-x>', '<cmd>x<cr>',      { desc = 'Write buffer and quit window' })
+vim.keymap.set("n", "H", "^",                   { desc = 'Move to beginning of line' })
+vim.keymap.set("n", "L", "$",                   { desc = 'Move to end of line' })
+vim.keymap.set({"n", "v"}, "K", "<C-u>" ,       { desc = 'Move half page up' })
+vim.keymap.set({"n", "v"}, "J", "<C-d>" ,       { desc = 'Move half page down' })
 
 -- Buffers
 vim.keymap.set('n', '<Leader>bn', '<cmd>bn<cr>', { desc = 'Go to next buffer'})
@@ -30,11 +30,11 @@ vim.keymap.set('n', '<Leader>bp', '<cmd>bp<cr>', { desc = 'Go to previous buffer
 --vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })
 
 -- Quick terminal window
-vim.keymap.set('n', '<M-enter>', vim.cmd.ter, { desc = 'Open terminal'})
+vim.keymap.set('n', '<Leader>ter', vim.cmd.ter, { desc = 'Open terminal'})
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Markdown
 --vim.keymap.set('n', '<Leader>mp', '<cmd>MarkdownPreview<cr>', { desc = 'Render .md as .pdf'})
-vim.keymap.set('n', '<Leader>sp', '<cmd>set spell!<cr>', { desc = 'Toggle spellcheck'})
+vim.keymap.set('n', '<Leader>spell', '<cmd>set spell!<cr>', { desc = 'Toggle spellcheck'})
 
 vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float) -- open inline error

@@ -11,7 +11,7 @@ return {
         cmake_build_options = {},
         cmake_soft_link_compile_commands = true,  -- Auto-link compile_commands.json
       })
-      
+
       -- Keymaps
       vim.keymap.set('n', '<leader>cg', ':CMakeGenerate<CR>', { desc = 'CMake generate' })
       vim.keymap.set('n', '<leader>cb', ':CMakeBuild<CR>', { desc = 'CMake build' })
