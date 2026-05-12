@@ -15,5 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 require("options")
 require("keybinds")
 require("pandoc-binds")
+require("git-binds")
 require("colors")
 require("lazy").setup("plugins")  -- Loads all files in lua/plugins/

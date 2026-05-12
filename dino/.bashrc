@@ -133,3 +133,16 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # added 2026-04-19, initializes zoxide, aliases to cd
 eval "$(zoxide init bash --cmd cd)"
 export PATH="$HOME/.local/bin:$PATH"
+
+# added 2026-05-03, Ctrl-X Ctrl-E to open current command line in editor
+export EDITOR=nvim
+
+# added 2026-05-03, elmfire environment variables
+export ELMFIRE_SCRATCH_BASE=~/scratch/clauten
+export ELMFIRE_BASE_DIR=/home/dino/Documents/projects/drydock/elmfire
+export ELMFIRE_INSTALL_DIR=$ELMFIRE_BASE_DIR/build/linux/bin
+export CLOUDFIRE_SERVER=worldgen.cloudfire.io
+export PATH=$PATH:$ELMFIRE_INSTALL_DIR:$ELMFIRE_BASE_DIR/cloudfire
+
+# added 2026-05-04, fuzzy find alias
+alias ff='find . -type f | fzf'

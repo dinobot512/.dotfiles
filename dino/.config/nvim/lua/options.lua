@@ -31,7 +31,7 @@ vim.opt.ignorecase = true           -- ignore case in searches by default
 vim.opt.smartcase = true            -- but make it case sensitive if an uppercase is entered
 
 -- Status Bar
-vim.o.laststatus = 1
+vim.o.laststatus = 2
 
 -- spell check
 vim.opt.spell = false;
@@ -42,3 +42,6 @@ vim.opt.spelllang = "en_us"
     vim.opt_local.spell = true
   end,
 })]]
+
+-- conceal level
+vim.opt.conceallevel = 2

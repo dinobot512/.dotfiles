@@ -17,5 +17,28 @@ return {
             bottom_pad = 0,
         },
         completions = { lsp = { enabled = true } },
+        pipe_table = {
+            enabled = true,
+            render_modes = false,
+            preset = 'none',
+            cell = 'padded',
+            cell_offset = function()
+                return 0
+            end,
+            padding = 1,
+            min_width = 0,
+            border = {
+                '┌', '┬', '┐',
+                '├', '┼', '┤',
+                '└', '┴', '┘',
+                '│', '─',
+            },
+            border_enabled = true,
+            border_virtual = false,
+            alignment_indicator = '━',
+            head = 'RenderMarkdownTableHead',
+            row = 'RenderMarkdownTableRow',
+            style = 'normal',
+        },
     },
 }

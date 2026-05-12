@@ -16,10 +16,10 @@ vim.keymap.set('n', '<M-T>', '<C-w>T',          { desc = 'Move the current split
 vim.keymap.set('n', '<M-q>', '<C-w>q',          { desc = 'Quit window' })
 vim.keymap.set('n', '<M-w>', '<cmd>write<cr>',  { desc = 'Write buffer' })
 vim.keymap.set('n', '<M-x>', '<cmd>x<cr>',      { desc = 'Write buffer and quit window' })
-vim.keymap.set("n", "H", "^",                   { desc = 'Move to beginning of line' })
-vim.keymap.set("n", "L", "$",                   { desc = 'Move to end of line' })
-vim.keymap.set({"n", "v"}, "K", "<C-u>" ,       { desc = 'Move half page up' })
-vim.keymap.set({"n", "v"}, "J", "<C-d>" ,       { desc = 'Move half page down' })
+--vim.keymap.set("n", "H", "^",                   { desc = 'Move to beginning of line' })
+--vim.keymap.set("n", "L", "$",                   { desc = 'Move to end of line' })
+--vim.keymap.set({"n", "v"}, "K", "<C-u>" ,       { desc = 'Move half page up' })
+--vim.keymap.set({"n", "v"}, "J", "<C-d>" ,       { desc = 'Move half page down' })
 
 -- Buffers
 vim.keymap.set('n', '<Leader>bn', '<cmd>bn<cr>', { desc = 'Go to next buffer'})
