@@ -88,9 +88,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
 alias vim='nvim'
 function open() {
     for f in "$@";
@@ -146,3 +146,6 @@ export PATH=$PATH:$ELMFIRE_INSTALL_DIR:$ELMFIRE_BASE_DIR/cloudfire
 
 # added 2026-05-04, fuzzy find alias
 alias ff='find . -type f | fzf'
+
+# added 2026-07-24, vim movement in bash
+set -o vi
