@@ -146,3 +146,5 @@ export PATH=$PATH:$ELMFIRE_INSTALL_DIR:$ELMFIRE_BASE_DIR/cloudfire
 
 # added 2026-05-04, fuzzy find alias
 alias ff='find . -type f | fzf'
+
+set -o vi
