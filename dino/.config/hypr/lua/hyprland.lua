@@ -3,14 +3,15 @@
 ----------------------------
 
 -- PROGRAMS --
-local terminal = "kitty"
-local fileManager = "dolphin"
-local menu = "rofi"
-local drunArgs = "-show drun -replace -i"
-local runArgs = "-show combi -modes combi -combi-modes \"drun,run\" -replace -i"
-local filebrowserArgs = "-show combi -modes combi -combi-modes \"filebrowser,recursivebrowser\" -replace -i -matching regex"
-local networkUI = "kitty -e nmtui"
-local audioUI = "kitty -e pulsemixer"
+terminal = "kitty"
+fileManager = "dolphin"
+menu = "rofi"
+networkUI = "kitty -e nmtui"
+audioUI = "kitty -e pulsemixer"
+
+-- KEYBINDINGS --
+require("keybindings")
+
 
 -- MONITORS --
 require("monitors")
@@ -24,5 +25,4 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("hyprpaper")
 end)
 
--- KEYBINDINGS --
-require("keybindings")
+
