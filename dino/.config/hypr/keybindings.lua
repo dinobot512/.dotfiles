@@ -5,21 +5,21 @@
 local mainMod = "SUPER"
 
 -- quick binds
-hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(Terminal))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(FileManager))
 hl.bind(mainMod .. " + W", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + E", hl.dsp.layout("togglesplit")) -- dwindle
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle"}))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("pkill waybar || waybar"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(networkUI))
-hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd(audioUI))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(NetworkUI))
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd(AudioUI))
 
 -- dmenu
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill " .. menu .. " || " .. menu .. " -show drun -replace -i"))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("pkill " .. menu .. " || " .. menu .. " -show combi -modes combi -combi-modes \"filebrowser,recursivebrowser\" -replace -i -matching regex"))
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("pkill " .. menu .. " || " .. menu .. " -show combi -modes combi -combi-modes \"drun,run\" -replace -i"))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill " .. Menu .. " || " .. Menu .. " -show drun -replace -i"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("pkill " .. Menu .. " || " .. Menu .. " -show combi -modes combi -combi-modes \"filebrowser,recursivebrowser\" -replace -i -matching regex"))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("pkill " .. Menu .. " || " .. Menu .. " -show combi -modes combi -combi-modes \"drun,run\" -replace -i"))
 
 -- MOVEMENT
 -- Move focus with mainMod + arrow keys
