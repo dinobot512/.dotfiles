@@ -67,4 +67,4 @@ end
 
 vim.keymap.set('n', '<leader>gs', git_sync,          { desc = 'Git sync: add all, auto commit, push' })
 vim.keymap.set('n', '<leader>gp', git_pull,          { desc = 'Git pull' })
-vim.keymap.set('n', '<leader>gf',    git_pull_and_sync, { desc = 'Git pull then sync' })
+vim.keymap.set('n', '<leader>gf', git_pull_and_sync, { desc = 'Git pull then sync' })

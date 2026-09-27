@@ -31,7 +31,11 @@ vim.api.nvim_create_autocmd('FileType', {
             vim.fn.jobstart(cmd, {
                 on_exit = function(_, code)
                     if code == 0 then
-                        vim.notify('PDF exported: ' .. out)
+                        if tmpl then
+                            vim.notify('PDF exported with template ' .. tmpl .. ': ' .. out)
+                        else
+                            vim.notify('PDF exported: ' .. out)
+                        end
                     else
                         vim.notify('pandoc failed (exit ' .. code .. ')', vim.log.levels.ERROR)
                     end

@@ -36,12 +36,21 @@ vim.o.laststatus = 2
 -- spell check
 vim.opt.spell = false;
 vim.opt.spelllang = "en_us"
---[[vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("FileType", {
   pattern = { "markdown" },
   callback = function()
     vim.opt_local.spell = true
   end,
-})]]
+})
 
 -- conceal level
 vim.opt.conceallevel = 2
+
+-- comment continuation (formatoptions)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "o" }) -- after o/O in normal mode
+    --vim.opt_local.formatoptions:remove({ "r" }) -- after newline in insert mode
+  end,
+})
