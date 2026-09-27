@@ -3,11 +3,14 @@
 -- WINDOW RULES --
 -- https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
-hl.window_rule({
+local suppressMaximizeRule = hl.window_rule({
+    -- Ignore maximize requests from all apps. You'll probably like this.
     name  = "suppress-maximize-events",
     match = { class = ".*" },
+
     suppress_event = "maximize",
 })
+suppressMaximizeRule:set_enabled(true)
 
 hl.window_rule({
     -- Fix some dragging issues with XWayland
