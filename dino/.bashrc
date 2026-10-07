@@ -143,5 +143,5 @@ alias ff='find . -type f | fzf'
 # added 2026-07-24, vim movement in bash
 set -o vi
 
-# added 2026-09-16, horse file manager alias
-alias h='horse'
+# added 2026-10-02, yazi file manager alias
+alias y='yazi'
