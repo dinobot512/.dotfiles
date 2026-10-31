@@ -16,6 +16,14 @@ hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(NetworkUI))
 hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd(AudioUI))
 
+-- groups
+hl.bind(mainMod .. " + G", hl.dsp.group.toggle())
+hl.bind(mainMod .. " + TAB", hl.dsp.group.next())
+hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.group.prev())
+
+-- focus urgent window, or the last focused one
+hl.bind(mainMod .. " + U", hl.dsp.focus({ urgent_or_last = true }))
+
 -- dmenu
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill " .. Menu .. " || " .. Menu .. " -show drun -replace -i"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("pkill " .. Menu .. " || " .. Menu .. " -show combi -modes combi -combi-modes \"filebrowser,recursivebrowser\" -replace -i -matching regex"))
@@ -49,17 +57,13 @@ hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
 -- Switch workspaces with mainMod + [0-9], move active window with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i, on_current_monitor = true }))
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false}))
 end
 
 -- Special workspace (scratchpad)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("★"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:★" }))
-
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -80,13 +84,35 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- SCREENSHOTS
-hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png'))
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd('grim - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png'))
+-- screenshot of a region
+hl.bind("XF86SelectiveScreenshot", hl.dsp.exec_cmd('grim -g "$(slurp -w1)" - | tee ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | wl-copy'))
+-- full screenshot, opened in satty
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd('grim - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'))
 -- hl.bind("Print", hl.dsp.exec_cmd("grimblast copysave area"))
 
--- swap escape and caps
+-- TOUCHPAD
 hl.config({
-    input =  {
-        kb_options = "caps:swapescape"
-    }
+    input = {
+        touchpad = {
+            natural_scroll        = true,
+            disable_while_typing  = true,
+            tap_to_click          = true,  -- tapping replaces pressing for most clicks
+            tap_and_drag          = true,
+            drag_lock             = true,
+            clickfinger_behavior  = false, -- 1/2/3-finger physical click = left/right/middle, anywhere on the pad
+            scroll_factor         = 1.0,   -- tune; lower = slower scrolling
+        },
+        accel_profile = "adaptive",        -- or "flat" for 1:1 feel
+    },
+
+    gestures = {
+        workspace_swipe_cancel_ratio       = 0.15, -- default 0.5
+        workspace_swipe_min_speed_to_force = 30,   -- default 30
+        workspace_swipe_distance           = 400,  -- default 300
+        workspace_swipe_forever            = true,
+        workspace_swipe_create_new         = false,
+    },
 })
+
+-- 3-finger horizontal swipe between workspaces
+hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace", scale = 0.8 })
