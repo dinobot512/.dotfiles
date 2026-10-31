@@ -1,4 +1,4 @@
-##df configurations
+# df configurations
 
 notable packages:
 bash-autocomplete
@@ -13,3 +13,11 @@ add to medo waybar.conf for multiple monitors
 
 https://wiki.hypr.land/Useful-Utilities/App-Clients/
 https://wiki.hypr.land/Useful-Utilities/File-Managers/
+
+# DEPENDENCIES
+bash-autocomplete
+kitty
+dolphin
+rofi
+nmtui
+pulsemixer
