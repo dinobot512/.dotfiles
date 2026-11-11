@@ -20,6 +20,9 @@ if hostname == "df-medo" then
         scale = 1,
     })
 
+    hl.workspace_rule({ workspace = "1", monitor = "DP-1",     default = true })
+    hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-1", default = true })
+
 elseif hostname == "df-zeko" then
     hl.monitor({
         output = "eDP-1",
@@ -27,6 +30,8 @@ elseif hostname == "df-zeko" then
         position = "auto",
         scale = 1,
     })
+
+    hl.workspace_rule({ workspace = "1", monitor = "eDP-1",    default = true })
 
     hl.monitor({
         output = "",

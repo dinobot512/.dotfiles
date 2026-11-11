@@ -53,13 +53,6 @@ hl.window_rule({
     float = true,
 })
 
--- WORKSPACE RULES --
--- https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
-hl.workspace_rule({ workspace = "1", monitor = "eDP-1",    default = true })
-hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-1", default = true })
-hl.workspace_rule({ workspace = "1", monitor = "DP-1",     default = true })
-
 -- "Smart gaps" / "No gaps when only"
 -- NOTE: w[tv1] = workspaces with one tiled visible window
 -- NOTE: f[1] = workspaces with maximized window
