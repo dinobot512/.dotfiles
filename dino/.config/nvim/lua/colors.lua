@@ -1,7 +1,9 @@
 -- lua/colors.lua
 -- df nvim configs
--- Aesthetics
+-- Aesthetics (loaded after plugins so the colorscheme is on runtimepath)
 
-vim.api.nvim_set_hl(0, "StatusLine",   { fg = "#14161b", bg = "#b3b5bc" })
-vim.api.nvim_set_hl(0, "StatusLineNC",   { fg = "#b0b0b0", bg = "#393939" })
-vim.api.nvim_set_hl(0, "WinSeparator",   { fg = "#b3b5bc", bg = "#14161b" })
+-- moonfly options (set before :colorscheme). See the plugin README
+-- vim.g.moonflyTransparent = true    -- use the terminal's background
+vim.g.moonflyItalics = false
+
+vim.cmd.colorscheme("moonfly")

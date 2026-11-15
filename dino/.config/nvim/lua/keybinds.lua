@@ -3,7 +3,7 @@
 -- Keybinds
 vim.g.mapleader = ' '               -- leader key
 
--- Window navigation without prefix (Alt key)
+-- Window Navigation
 vim.keymap.set('n', '<M-h>', '<C-w>h',          { desc = 'Move to left window' })
 vim.keymap.set('n', '<M-j>', '<C-w>j',          { desc = 'Move to window below' })
 vim.keymap.set('n', '<M-k>', '<C-w>k',          { desc = 'Move to window above' })
@@ -24,10 +24,6 @@ vim.keymap.set({"n", "v"}, "J", "<C-d>" ,       { desc = 'Move half page down' }
 -- Buffers
 vim.keymap.set('n', '<Leader>bn', '<cmd>bn<cr>', { desc = 'Go to next buffer'})
 vim.keymap.set('n', '<Leader>bp', '<cmd>bp<cr>', { desc = 'Go to previous buffer'})
-
--- File explorer
---vim.keymap.set('n', '<M-e>', vim.cmd.Ex, { desc = 'Open file explorer' })
---vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', { desc = 'Open nvim-tree' })
 
 -- Quick terminal window
 vim.keymap.set('n', '<Leader>ter', vim.cmd.ter, { desc = 'Open terminal'})

@@ -1,20 +1,14 @@
 -- init.lua
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
+-- df nvim configs
 
+-- Core 
 require("options")
 require("keybinds")
 require("pandoc-binds")
-require("git-binds")
-require("colors")
-require("lazy").setup("plugins")  -- Loads all files in lua/plugins/
+
+-- Plugins
+require("plugins")
+require("colors")   -- after plugins: needs the colorscheme on runtimepath
+
+-- LSP
+require("lsp")

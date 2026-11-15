@@ -92,6 +92,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias l='ls -CF'
 alias vim='nvim'
+alias v='nvim'
 function open() {
     for f in "$@";
     do

@@ -1,9 +1,12 @@
 -- lua/options.lua
 -- df nvim configs
--- Options
 
--- Hint: use `:h <option>` to figure out the meaning if needed
+-- `:h <option>` help page for option
 vim.opt.clipboard = 'unnamedplus'   -- use system clipboard 
+
+-- `'menu'` shows popup menu of candidates rather than inline cycling
+-- `'menuone'` shows that menu when there is one match
+-- `'noselect'` disables auto-inserting matches
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 -- Mouse Settings
@@ -17,10 +20,10 @@ vim.opt.expandtab = true            -- tabs are spaces, mainly because of Python
 
 -- UI config
 vim.opt.number = true               -- show absolute number
-vim.opt.relativenumber = true       -- add numbers to each line on the left side
+vim.opt.relativenumber = true
 vim.opt.cursorline = true           -- highlight cursor line underneath the cursor horizontally
-vim.opt.splitbelow = true           -- open new vertical split bottom
-vim.opt.splitright = true           -- open new horizontal splits right
+vim.opt.splitbelow = true           -- open new horizontal split bottom
+vim.opt.splitright = true           -- open new vertical splits right
 vim.opt.termguicolors = true        -- enable 24-bit RGB color in the TUI
 vim.opt.showmode = false            -- show mode hint ( -- INSERT -- )
 
@@ -33,6 +36,9 @@ vim.opt.smartcase = true            -- but make it case sensitive if an uppercas
 -- Status Bar
 vim.o.laststatus = 2
 
+-- conceal level
+vim.opt.conceallevel = 2
+
 -- spell check
 vim.opt.spell = false;
 vim.opt.spelllang = "en_us"
@@ -40,11 +46,10 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "markdown" },
   callback = function()
     vim.opt_local.spell = true
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
   end,
 })
-
--- conceal level
-vim.opt.conceallevel = 2
 
 -- comment continuation (formatoptions)
 vim.api.nvim_create_autocmd("FileType", {
