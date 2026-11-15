@@ -36,6 +36,9 @@ vim.pack.add({
   gh("nvim-lua/plenary.nvim"),
   gh("nvim-telescope/telescope.nvim"),
 
+  -- Harpoon
+  { src = gh("ThePrimeagen/harpoon"), version = "harpoon2" }, -- master is the old v1 API
+
   -- File tree
   gh("nvim-tree/nvim-tree.lua"),
 
@@ -49,3 +52,4 @@ require("plugins.blink")
 require("plugins.treesitter")
 require("plugins.telescope")
 require("plugins.nvim-tree")
+require("plugins.harpoon")
