@@ -146,3 +146,6 @@ set -o vi
 
 # added 2026-10-02, yazi file manager alias
 alias y='yazi'
+
+# erase stray charachters before first prompt
+printf '\r\e[K'
