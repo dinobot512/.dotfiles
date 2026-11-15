@@ -1,0 +1,3 @@
+# ripgrep/telescope: search hidden files in this repo, except .git
+!.*
+.git/
