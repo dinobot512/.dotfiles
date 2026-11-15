@@ -9,6 +9,10 @@ Menu = "rofi"
 NetworkUI = "kitty -e nmtui"
 AudioUI = "kitty -e pulsemixer"
 
+-- ENVIRONMENT --
+hl.env("EDITOR", "nvim")
+hl.env("VISUAL", "nvim")
+
 -- KEYBINDINGS --
 require("keybindings")
 
