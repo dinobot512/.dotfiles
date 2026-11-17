@@ -69,6 +69,10 @@ require("nvim-tree").setup({
       end
       api.tree.close()
     end, "Close")
+
+    map("<Esc>", function()
+        api.tree.close()
+    end, "Close")
   end,
 })
 
